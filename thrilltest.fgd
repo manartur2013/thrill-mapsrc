@@ -54,30 +54,6 @@
 	sequence(integer) : "Animation Sequence (editor)" : : "Sequence to display in Jackhammer. This does not affect gameplay."
 ]
 
-@BaseClass = ZHLT
-[
-	zhlt_lightflags(choices) : "ZHLT Lightflags" : 0 =
-	[
-		0 : "Default"
-		1 : "Embedded Fix"
-		2 : "Opaque (blocks light)"
-		3 : "Opaque + Embedded fix"
-		6 : "Opaque + Concave Fix"
-	]
-	light_origin(string) : "Light Origin Target"
-]
-
-@BaseClass = ZHLT_point
-[
-	_fade(string) : "ZHLT Fade" : "1.0"
-	_falloff(choices) : "ZHLT Falloff" : 0 =
-	[
-		0 : "Default"
-		1 : "Inverse Linear"
-		2 : "Inverse Square"
-	]
-]
-
 @BaseClass = Appearflags
 [
 	spawnflags(Flags) =
@@ -654,7 +630,7 @@
 @PointClass base(Weapon, Targetx) studio("models/w_isotopebox.mdl") = ammo_gaussclip : "Spawns ammo for the gauss and egon weapons." : "http://twhl.info/wiki.php?id=5" []
 @PointClass base(Weapon, Targetx) studio("models/w_crossbow_clip.mdl") = ammo_crossbow : "Spawns crossbow ammo." : "http://twhl.info/wiki.php?id=8" []
 
-@SolidClass base(Target, ZHLT) = button_target : "Target Button"
+@SolidClass base(Target) = button_target : "Target Button"
 [
 	spawnflags(flags) =
 	[
@@ -1099,7 +1075,7 @@
 	]
 ]
 
-@SolidClass base(Breakable, RenderFields, ZHLT) = func_breakable : "Breakable Object" 
+@SolidClass base(Breakable, RenderFields) = func_breakable : "Breakable Object" 
 [
 	spawnflags(flags) =
 	[
@@ -1113,7 +1089,7 @@
 	_minlight(string) : "Minimum light level"
 ]
 
-@SolidClass base(Global,Targetname, Target, RenderFields, Angles, ZHLT) = func_button : "Button" 
+@SolidClass base(Global,Targetname, Target, RenderFields, Angles) = func_button : "Button" 
 [
 	speed(integer) : "Speed" : 5
 	health(integer) : "Health (shootable if > 0)"
@@ -1196,7 +1172,7 @@
 	_minlight(string) : "Minimum light level"
 ]
 
-@SolidClass base(Global,RenderFields, Targetname, Angles, ZHLT) = func_conveyor : "Conveyor Belt" 
+@SolidClass base(Global,RenderFields, Targetname, Angles) = func_conveyor : "Conveyor Belt" 
 [
 	spawnflags(flags) =
 	[
@@ -1207,9 +1183,9 @@
 	_minlight(string) : "Minimum light level"
 ]
 
-@SolidClass base(Door, ZHLT) = func_door : "Basic door" []
+@SolidClass base(Door) = func_door : "Basic door" []
 
-@SolidClass base(Door, ZHLT) = func_door_rotating : "Rotating door" 
+@SolidClass base(Door) = func_door_rotating : "Rotating door" 
 [
 	spawnflags(flags) =
 	[
@@ -1221,12 +1197,12 @@
 	distance(integer) : "Distance (deg)" : 90
 ]
 
-@SolidClass base(Appearflags, RenderFields, ZHLT) = func_friction : "Surface with a change in friction" 
+@SolidClass base(Appearflags, RenderFields) = func_friction : "Surface with a change in friction" 
 [
 	modifier(integer) : "Percentage of standard (0 - 100)" : 15
 ]
 
-@SolidClass base(Targetname, RenderFields, Global, ZHLT) = func_guntarget : "Moving platform" 
+@SolidClass base(Targetname, RenderFields, Global) = func_guntarget : "Moving platform" 
 [
 	speed(integer) : "Speed (units per second)" : 100
 	target(target_source) : "First stop target"
@@ -1235,13 +1211,13 @@
 	_minlight(string) : "Minimum light level"
 ]
 
-@SolidClass base(Global, RenderFields, ZHLT) = func_healthcharger: "Wall health recharger" 
+@SolidClass base(Global, RenderFields) = func_healthcharger: "Wall health recharger" 
 [
 	// dmdelay(integer) : "Deathmatch recharge delay" : 0
 	_minlight(string) : "Minimum light level"
 ]
 
-@SolidClass base(Targetname, RenderFields, ZHLT) = func_illusionary : "Fake Wall/Light" 
+@SolidClass base(Targetname, RenderFields) = func_illusionary : "Fake Wall/Light" 
 [
 
 	skin(choices) : "Contents" : -1 =
@@ -1270,7 +1246,7 @@
 	m_iszYController(target_destination) : "Y Controller"
 ]
 
-@SolidClass base(Global,Appearflags, Targetname, RenderFields, Angles, ZHLT) = func_pendulum : "Swings back and forth" 
+@SolidClass base(Global,Appearflags, Targetname, RenderFields, Angles) = func_pendulum : "Swings back and forth" 
 [
 	speed(integer) : "Speed" : 100
 	distance(integer) : "Distance (deg)" : 90
@@ -1287,7 +1263,7 @@
 	_minlight(integer) : "_minlight"
 ]
 
-@SolidClass base(Targetname,Global,RenderFields, PlatSounds, ZHLT) = func_plat : "Elevator" 
+@SolidClass base(Targetname,Global,RenderFields, PlatSounds) = func_plat : "Elevator" 
 [
 	spawnflags(Flags) =
 	[
@@ -1298,7 +1274,7 @@
 	_minlight(string) : "Minimum light level"
 ]	
 
-@SolidClass base(Targetname, Global, RenderFields, PlatSounds, Angles, ZHLT) = func_platrot : "Moving Rotating platform" 
+@SolidClass base(Targetname, Global, RenderFields, PlatSounds, Angles) = func_platrot : "Moving Rotating platform" 
 [
 	spawnflags(Flags) =
 	[
@@ -1312,7 +1288,7 @@
 	_minlight(string) : "Minimum light level"
 ]
 
-@SolidClass base(Breakable, RenderFields, ZHLT) = func_pushable : "Pushable object"
+@SolidClass base(Breakable, RenderFields) = func_pushable : "Pushable object"
 [
 	size(choices) : "Hull Size" : 0 =
 	[
@@ -1330,13 +1306,13 @@
 	_minlight(string) : "Minimum light level"
 ]
 
-@SolidClass base(Global,RenderFields, ZHLT) = func_recharge: "Battery recharger" 
+@SolidClass base(Global,RenderFields) = func_recharge: "Battery recharger" 
 [
 	// dmdelay(integer) : "Deathmatch recharge delay" : 0
 	_minlight(string) : "Minimum light level"
 ]
 
-@SolidClass base(Targetname, Global, RenderFields, Angles, ZHLT) = func_rot_button : "RotatingButton" 
+@SolidClass base(Targetname, Global, RenderFields, Angles) = func_rot_button : "RotatingButton" 
 [
 	target(target_destination) : "Targetted object"
 	// changetarget will change the button's target's TARGET field to the button's changetarget.
@@ -1370,7 +1346,7 @@
 	_minlight(integer) : "_minlight"
 ]
 
-@SolidClass base(Targetname, Global, RenderFields, Angles, ZHLT) = func_rotating : "Rotating Object"
+@SolidClass base(Targetname, Global, RenderFields, Angles) = func_rotating : "Rotating Object"
 [
 	speed(integer)	: "Rotation Speed" : 0
 	volume(integer) : "Volume (10 = loudest)" : 10
@@ -1403,7 +1379,7 @@
 	dmg(integer) : "Damage inflicted when blocked" : 0
 ]
 
-@SolidClass base(BaseTank, ZHLT) = func_tank : "Brush Gun Turret" 
+@SolidClass base(BaseTank) = func_tank : "Brush Gun Turret" 
 [
 	bullet(choices) : "Bullets" : 0 = 
 	[
@@ -1419,30 +1395,30 @@
 	target(target_destination) : "Tank entity name"
 ]
 
-@SolidClass base(BaseTank, ZHLT) = func_tanklaser : "Brush Laser Turret" 
+@SolidClass base(BaseTank) = func_tanklaser : "Brush Laser Turret" 
 [
 	laserentity(target_source) : "env_laser Entity"
 ]
 
-@SolidClass base(BaseTank, ZHLT) = func_tankrocket : "Brush Rocket Turret" []
+@SolidClass base(BaseTank) = func_tankrocket : "Brush Rocket Turret" []
 
 
-@SolidClass base(BaseTank, ZHLT) = func_tankmortar : "Brush Mortar Turret" 
+@SolidClass base(BaseTank) = func_tankmortar : "Brush Mortar Turret" 
 [
 	iMagnitude(Integer) : "Explosion Magnitude" : 100
 ]
 
-@SolidClass base(Trackchange, ZHLT) = func_trackautochange : "Automatic track changing platform"
+@SolidClass base(Trackchange) = func_trackautochange : "Automatic track changing platform"
 [
 	_minlight(string) : "Minimum light level"
 ]
 
-@SolidClass base(Trackchange, ZHLT) = func_trackchange : "Train track changing platform"
+@SolidClass base(Trackchange) = func_trackchange : "Train track changing platform"
 [
 	_minlight(string) : "Minimum light level"
 ]
 
-@SolidClass base(Targetname, Global, RenderFields, ZHLT) = func_tracktrain : "Track Train" 
+@SolidClass base(Targetname, Global, RenderFields) = func_tracktrain : "Track Train" 
 [
 	spawnflags(flags) =
 	[
@@ -1482,7 +1458,7 @@
 	target(target_destination) : "Train Name"
 ]
 
-@SolidClass base(Targetname, Global, RenderFields, ZHLT) = func_train : "Moving platform" 
+@SolidClass base(Targetname, Global, RenderFields) = func_train : "Moving platform" 
 [
 	target(target_source) : "First stop target"
 	movesnd(choices) : "Move Sound" : 0 = 
@@ -1530,7 +1506,7 @@
 	_minlight(string) : "Minimum light level"
 ]
 
-@SolidClass base(Targetname, Appearflags, RenderFields, Global, ZHLT) = func_wall : "Wall" 
+@SolidClass base(Targetname, Appearflags, RenderFields, Global) = func_wall : "Wall" 
 [
 	_minlight(string) : "Minimum light level"
 ]
@@ -1543,7 +1519,7 @@
 	]
 ]
 
-@SolidClass base(Door, ZHLT) = func_water : "Liquid" 
+@SolidClass base(Door) = func_water : "Liquid" 
 [
 	spawnflags(flags) =
 	[
@@ -1773,12 +1749,12 @@
 // lights
 //
 
-@PointClass iconsprite("sprites/light.spr") base(Target, Targetname, Light, ZHLT_point) flags(Light) = light : "Invisible lightsource." : "http://twhl.info/wiki.php?id=148"
+@PointClass iconsprite("sprites/light.spr") base(Target, Targetname, Light_point) flags(Light) = light : "Invisible lightsource." : "http://twhl.info/wiki.php?id=148"
 [
 	spawnflags(Flags) = [ 1 : "Initially dark" : 0 : "If this is enabled, the entity will need to be triggered to work." ]
 ]
 
-@PointClass iconsprite("sprites/light.spr") base(Targetname, Target, Angles, ZHLT_point) flags(Light, Angle) = light_spot : "The light_spot entity allows you to create direct beams of light (like from a, err, spotlight)." : "http://twhl.info/wiki.php?id=147" 
+@PointClass iconsprite("sprites/light.spr") base(Targetname, Target, Angles_point) flags(Light, Angle) = light_spot : "The light_spot entity allows you to create direct beams of light (like from a, err, spotlight)." : "http://twhl.info/wiki.php?id=147" 
 [
 	_cone(integer) : "Inner (bright) angle" : 30 : "The angle of the cone formed around the directional axis. The area inside this cone will contain the brightest light."
 	_cone2(integer) : "Outer (fading) angle" : 45 : "As above, although the area inside this cone will fade increasingly towards the outer edges."
@@ -1808,7 +1784,7 @@
 	pattern(string) : "Custom Appearance" : : "Use a string of letters to provide a custom light style. The property allows you to enter a string of letters from a to z, representing brightness. If you entered 'abcdefghihgfedcba' then the light would go from bright to dim and back again and then repeat. Complicating things, to use this feature, you must name the light. However, if you then use a trigger to activate it, then it will behave as a normal light."
 ]
 
-@SolidClass base(Door, ZHLT) = momentary_door : "Momentary/Continuous door" 
+@SolidClass base(Door) = momentary_door : "Momentary/Continuous door" 
 [
 	spawnflags(flags) =
 	[
@@ -1816,7 +1792,7 @@
 	]
 ]
 
-@SolidClass base(Targetname, Target, Angles, RenderFields, ZHLT) = momentary_rot_button : "Direct wheel control" 
+@SolidClass base(Targetname, Target, Angles, RenderFields) = momentary_rot_button : "Direct wheel control" 
 [
 	speed(integer) : "Speed" : 50
 	master(string) : "Master" 
