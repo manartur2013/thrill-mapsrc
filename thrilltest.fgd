@@ -356,6 +356,7 @@
 		256:"Use Only" : 0
 		512: "Monsters Can't" : 0
 		1024: "Psycho Door" : 0
+		4096: "Use through walls": 0
 	]
 	// NOTE: must be duplicated in BUTTON
 	locked_sound(choices) : "Locked Sound" : 0 = 
@@ -1119,6 +1120,7 @@
 		32: "Toggle" : 0
 		64: "Sparks" : 0
 		256:"Touch Activates": 0
+		4096: "Use through walls": 0
 	]
 	locked_sound(choices) : "Locked Sound" : 0 = 
 	[
@@ -1342,6 +1344,7 @@
 		64: "X Axis" : 0
 		128: "Y Axis" : 0
 		256:"Touch Activates": 0
+		4096: "Use through walls": 0
 	]
 	_minlight(integer) : "_minlight"
 ]
