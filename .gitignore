@@ -2,3 +2,4 @@
 *.max
 *.rmx
 *.jmx
+_old/*.*
