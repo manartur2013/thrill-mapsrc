@@ -2773,6 +2773,8 @@
 	]
 ]
 
+@PointClass base(Targetname, Targetx) = trigger_pardon : "Trigger: Pardon a Monster" []
+
 @SolidClass base(Targetname) = trigger_shower : "Trigger: Emergency shower"
 [
 	dmgtype(choices) : "Damage Type" : 0 = 
