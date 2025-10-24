@@ -2575,6 +2575,8 @@
 	command(string) : "Command"
 ]
 
+@PointClass base(Targetname) = target_killclient : "Kill Singleplayer Client Target" []
+
 //
 // Triggers
 //
