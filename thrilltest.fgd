@@ -193,6 +193,8 @@
 	spawnflags(Flags) = 
 	[
 		1 : "Repeatable" 	: 0
+		2 : "Stickygib only" : 0
+		4 : "Mixed gibs"	: 0
 	]
 ]
 
