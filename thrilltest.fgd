@@ -2813,6 +2813,7 @@
 		3600:"In an hour"
 	]
 	wait(integer) : "Delay before reset" : 10
+	delay(string) : "Delay before fire" : "0"
 ]
 
 @SolidClass base(Trigger) = trigger_teleport : "Trigger teleport" []
