@@ -2793,6 +2793,11 @@
 	]
 ]
 
+@SolidClass base(Trigger) = trigger_speed : "Trigger: Check entity speed"
+[
+	targetspeed(string) : "Target speed" : "200"
+]
+
 @SolidClass base(Targetname) = trigger_suitupdate : "Trigger: Player Suit update"
 [
 	spawnflags(flags) =
